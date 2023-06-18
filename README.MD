@@ -57,6 +57,18 @@ ss2023-00 ansible_host=127.0.0.1 ansible_port=22 ansible_user=vagrant ansible_ss
 ansible -m ping cluster
 ```
 
+Install cluster
+
+```sh
+ansible-playbook -K cluster/master.yml 
+ansible-playbook -K cluster/slave.yml 
+ansible-playbook -K slurm/master.yml 
+ansible-playbook -K slurm/slave.yml 
+ansible-playbook -K openmpi/main.yml 
+ansible-playbook -K jupyterhub/main.yml 
+ansible-playbook -K users/main.yml
+```
+
 # References
 
 - [How to install Ansible on Ubuntu Server 18.04](https://www.techrepublic.com/article/how-to-install-ansible-on-ubuntu-server-18-04/)
