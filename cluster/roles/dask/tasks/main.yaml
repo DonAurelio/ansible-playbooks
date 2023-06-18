@@ -1,6 +1,6 @@
 - name: Install Python prerequisites
   command: | 
-    python3 -m pip install \
+    pip3.10 install \
       graphviz \
       dask[complete] \
       jupyterlab \

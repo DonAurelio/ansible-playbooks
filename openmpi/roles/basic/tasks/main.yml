@@ -49,7 +49,7 @@
     chdir: "{{ mpi_temp_dir }}/openmpi-3.1.2"
 
 - name: Make MPI
-  command: make -j 32
+  command: make -j
   args:
     chdir: "{{ mpi_temp_dir }}/openmpi-3.1.2"
 

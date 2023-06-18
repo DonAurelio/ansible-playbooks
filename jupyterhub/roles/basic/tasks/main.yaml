@@ -31,7 +31,7 @@
 
 - name: Install Jupyter prerequisites
   command: | 
-    /opt/jupyterhub/bin/python3 -m pip install \
+    /opt/jupyterhub/bin/pip3.10 install \
       graphviz \
       dask[complete] \
       jupyterlab \
