@@ -7,6 +7,8 @@
       - python3.10-venv
       - nodejs
       - npm
+      - virtualenv 
+      - graphviz
     state: present
 
 - name: Create virtualenv in /opt/jupyterhub/
@@ -26,6 +28,19 @@
 
 - name: Install Jupyter Hub/Lab
   command: /opt/jupyterhub/bin/python3 -m pip install wheel jupyterhub jupyterlab ipywidgets
+
+- name: Install Jupyter prerequisites
+  command: | 
+    /opt/jupyterhub/bin/python3 -m pip install \
+      graphviz \
+      dask[complete] \
+      jupyterlab \
+      dask-labextension \
+      dask-jobqueue \
+      memory_profiler \
+      coiled
+  register: cmdln
+  check_mode: no
 
 - name: Install configurable-http-proxy
   command: npm install -g configurable-http-proxy

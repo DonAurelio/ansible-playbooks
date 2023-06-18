@@ -1,0 +1,17 @@
+- name: Create Dask configuration directory
+  file: 
+    path: /home/{{ item }}/.config/dask/
+    recurse: true
+    state: directory
+    owner: "{{ item }}"
+    group: "{{ item }}"
+  with_sequence: start={{ users_seq_start }} end={{ users_seq_end }} format={{ users_seq_format }}
+
+- name: Create Dask configuration file
+  template:
+    src: dask.yaml.j2
+    dest: /home/{{ item }}/.config/dask/dask.yaml
+    owner: "{{ item }}"
+    group: "{{ item }}"
+    mode: 0755
+  with_sequence: start={{ users_seq_start }} end={{ users_seq_end }} format={{ users_seq_format }}

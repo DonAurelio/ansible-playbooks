@@ -6,6 +6,7 @@
   become: true
   roles: 
     - basic
+    - dask
     - slave
   vars_files:
     - ./vars/common.yml

@@ -9,7 +9,9 @@
   become: true
   roles: 
     - basic
+    - dask
   vars:
+    jupyterhub_public_ip: 10.0.0.1
     master_hostname: ss2023-00
     users_seq_format: ss%d
     users_seq_start: 1

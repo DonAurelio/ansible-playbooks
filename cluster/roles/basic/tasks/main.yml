@@ -18,5 +18,10 @@
       - build-essential
       - nfs-common
       - nfs-kernel-server 
+      - nodejs
+      - npm
+      - virtualenv 
+      - graphviz
     state: present
   tags: slave_only
+  
